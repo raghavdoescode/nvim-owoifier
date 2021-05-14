@@ -1,11 +1,11 @@
-import neovim
+import pynvim 
 
-@neovim.plugin
+@pynvim.plugin
 class Plugin(object):
     def __init__(self, vim):
         self.vim = vim
 
-    @neovim.command("OWOify")
+    @pynvim.command("OWOify")
     def owoify(self):
         file_path = self.vim.current.buffer.name
         with open(file_path, 'r+') as file:
